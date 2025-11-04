@@ -6,8 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connection String - بعداً تکمیل می‌کنیم
-const MONGODB_URI = "mongodb+srv://pooyanmavalli_db:7CjSh4P8zMsgQpQI@pooyan.sz@yxnh.mongodb.net/?appName=pooyan";
+const MONGODB_URI = "mongodb+srv://pooyanmavalli_db:7CjSh4P8zMsgQpQI@pooyan.sz@yxnh.mongodb.net/crash-game?retryWrites=true&w=majority";
 
 mongoose.connect(MONGODB_URI)
   .then(() => console.log('✅ Connected to MongoDB'))
@@ -16,8 +15,7 @@ mongoose.connect(MONGODB_URI)
 app.get('/', (req, res) => {
   res.json({ 
     message: '🚀 Crash Game API Running!',
-    status: 'Active',
-    game: 'Ready for development'
+    status: 'Live'
   });
 });
 
